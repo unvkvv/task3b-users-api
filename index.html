@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Практическое задание 3Б: справочник пользователей с REST API">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <title>Справочник пользователей — задание 3Б</title>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">НИТУ МИСИС · Клиентские скрипты</div>
+      <h1>Справочник пользователей</h1>
+      <p>Загрузка пользователей и их публикаций из JSONPlaceholder через REST API.</p>
+      <div class="student-line">Практическое задание 3Б · Новикова У. А. · БПИ-23-РП-2</div>
+    </header>
+
+    <div class="dashboard">
+      <section class="panel users-panel" aria-labelledby="users-heading">
+        <div class="section-heading">
+          <div>
+            <h2 id="users-heading">Пользователи</h2>
+            <p class="subheading">Имя, электронная почта и город</p>
+          </div>
+          <button id="loadUsersBtn" class="button button-primary" type="button">Загрузить пользователей</button>
+        </div>
+
+        <div class="search-block">
+          <label for="searchInput">Поиск по имени</label>
+          <input id="searchInput" type="search" placeholder="Например, Leanne" autocomplete="off" disabled>
+          <p id="usersCount" class="count" aria-live="polite">Найдено: 0</p>
+        </div>
+        <p id="usersStatus" class="notice notice-neutral" role="status" aria-live="polite">Нажмите «Загрузить пользователей», чтобы получить список.</p>
+        <button id="retryUsersBtn" class="button button-outline hidden" type="button">Повторить загрузку</button>
+        <div id="usersList" class="users-list" aria-label="Список пользователей"></div>
+      </section>
+
+      <section class="panel posts-panel" aria-labelledby="posts-heading">
+        <div class="section-heading">
+          <div>
+            <h2 id="posts-heading">Публикации</h2>
+            <p class="subheading">Первые три записи выбранного пользователя</p>
+          </div>
+        </div>
+        <p id="postsStatus" class="notice notice-neutral" role="status" aria-live="polite">Выберите пользователя и нажмите «Показать публикации».</p>
+        <button id="retryPostsBtn" class="button button-outline hidden" type="button">Повторить запрос</button>
+        <div id="postsList" class="posts-list" aria-label="Публикации пользователя"></div>
+      </section>
+    </div>
+
+    <footer class="footer">Данные предоставлены тестовым REST API JSONPlaceholder. Сервер и база данных не используются.</footer>
+  </main>
+</body>
+</html>
